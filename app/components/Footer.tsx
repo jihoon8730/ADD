@@ -57,6 +57,7 @@ const Buttons = styled.button`
   font-weight: 400;
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 `;
 
 const Lines = styled.text`

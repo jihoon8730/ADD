@@ -28,6 +28,7 @@ const Header = styled.header`
   padding: 0 10px 0 10px;
   width: 100%;
   height: 58px;
+  background-color: #ffffff;
 `;
 
 const ViewBox = styled.div<{ contentPosition: string }>`

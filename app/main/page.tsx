@@ -2,64 +2,56 @@
 
 import Image from "@/node_modules/next/image";
 import styled from "styled-components";
-import Footer from "../components/Footer";
-import TopNavigation from "../components/TopNavigation";
+import ContentsCard from "./component/ContentsCard";
 import MenuIcon from "./component/MenuIcon";
 import Slick from "./component/Slick";
 
 export default function main() {
   return (
-    <div style={{ backgroundColor: "gray" }}>
-      <Container>
-        <TopNavigation />
+    <Container>
+      <SliderView>
+        <Slick />
+      </SliderView>
 
-        <SliderView>
-          <Slick />
-        </SliderView>
+      <MenuView>
+        <IconBox>
+          <MenuIcon iconCode={"picture"} />
+          <MenuText>{"사진"}</MenuText>
+        </IconBox>
+        <IconBox>
+          <MenuIcon iconCode={"place"} />
+          <MenuText>{"지역"}</MenuText>
+        </IconBox>
+        <IconBox>
+          <MenuIcon iconCode={"mdi"} />
+          <MenuText>{"느낌"}</MenuText>
+        </IconBox>
+        <IconBox>
+          <MenuIcon iconCode={"local"} />
+          <MenuText>{"장소"}</MenuText>
+        </IconBox>
+      </MenuView>
 
-        <MenuView>
-          <IconBox>
-            <MenuIcon iconCode={"picture"} />
-            <MenuText>{"사진"}</MenuText>
-          </IconBox>
-          <IconBox>
-            <MenuIcon iconCode={"place"} />
-            <MenuText>{"지역"}</MenuText>
-          </IconBox>
-          <IconBox>
-            <MenuIcon iconCode={"mdi"} />
-            <MenuText>{"느낌"}</MenuText>
-          </IconBox>
-          <IconBox>
-            <MenuIcon iconCode={"local"} />
-            <MenuText>{"장소"}</MenuText>
-          </IconBox>
-        </MenuView>
-
-        <ContentsView>
-          <TitleBox>
-            <Title>{"어디든 이야기 👀"}</Title>
-            <OtherStories>
-              <Description>{"다른 이야기들 살펴보기"}</Description>
-              <Image
-                src={"/assets/icons/right-Arrow.svg"}
-                width={12}
-                height={12}
-                alt={"right-Arrow failed"}
-              />
-            </OtherStories>
-          </TitleBox>
-        </ContentsView>
-
-        <Footer />
-      </Container>
-    </div>
+      <ContentsView>
+        <TitleBox>
+          <Title>{"어디든 이야기 👀"}</Title>
+          <OtherStories>
+            <Description>{"다른 이야기들 살펴보기"}</Description>
+            <Image
+              src={"/assets/icons/right-Arrow.svg"}
+              width={12}
+              height={12}
+              alt={"right-Arrow failed"}
+            />
+          </OtherStories>
+        </TitleBox>
+        <ContentsCard />
+      </ContentsView>
+    </Container>
   );
 }
 
 const Container = styled.main`
-  margin: 0 auto;
-  width: 428px;
   height: auto;
   background-color: #ffffff;
 `;
