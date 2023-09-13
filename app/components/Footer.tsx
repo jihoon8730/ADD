@@ -31,7 +31,7 @@ const FooterView = styled.footer`
   flex-direction: column;
   height: 202px;
   padding: 19px 31px 0px 31px;
-  background-color: #e3e3e3;
+  background-color: #ebecf3;
 `;
 
 const TelNumber = styled.text`

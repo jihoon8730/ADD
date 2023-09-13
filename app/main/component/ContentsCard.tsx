@@ -19,7 +19,15 @@ export default function ContentsCard() {
         <Tag colors="#3C67FF" backColor="#EFF2FF">
           <TagDescription fontColor="#3C67FF">{"#명소"}</TagDescription>
         </Tag>
-        <Place></Place>
+        <Place>
+          <Image
+            src={"/assets/icons/pin.svg"}
+            width={22}
+            height={22}
+            alt={"Pin-Loading"}
+          />
+          <PlaceTitle>{"경기도 남양주시"}</PlaceTitle>
+        </Place>
       </TagBox>
     </Cards>
   );
@@ -38,7 +46,7 @@ const ImageBox = styled.section`
 
 const TagBox = styled.section`
   display: flex;
-  gap: 10px;
+  gap: 5px;
   margin-top: 8px;
 `;
 
@@ -46,8 +54,8 @@ const Tag = styled.div<{ colors: string; backColor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 53px;
-  height: 22px;
+  width: 54px;
+  height: 25px;
   border-radius: 10px;
   border: 1px solid ${(props) => props.colors || "#FFFFFF"};
   background-color: ${(props) => props.backColor || "#ffffff"};
@@ -58,4 +66,12 @@ const TagDescription = styled.text<{ fontColor: string }>`
   font-size: 13px;
 `;
 
-const Place = styled.div``;
+const Place = styled.div`
+  ${({ theme }) => theme.MIXINS.flexBox("row")}
+`;
+
+const PlaceTitle = styled.text`
+  font-size: 14px;
+  font-weight: 500;
+  color: #6d6d6d;
+`;

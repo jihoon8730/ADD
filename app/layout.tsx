@@ -2,7 +2,9 @@
 
 import Footer from "./components/Footer";
 import TopNavigation from "./components/TopNavigation";
-import "./global.css";
+import "./styles/global.css";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
 
 export default function RootLayout({
   children,
@@ -20,9 +22,11 @@ export default function RootLayout({
             background-color: #eeeeee;
           }
         `}</style>
-        <TopNavigation />
-        {children}
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <TopNavigation />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

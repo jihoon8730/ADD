@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "@/node_modules/next/image";
 
 export default function Slick() {
   var settings = {
@@ -18,7 +19,12 @@ export default function Slick() {
   return (
     <Slider {...settings}>
       <Images>
-        <h3>1</h3>
+        <Image
+          src={"/assets/icons/vn.png"}
+          width={428}
+          height={144}
+          alt={"image1"}
+        />
         {/* 내용 입력 */}
       </Images>
       <Images>

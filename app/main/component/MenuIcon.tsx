@@ -20,8 +20,8 @@ const Icons = styled.button`
   align-items: center;
   width: 85px;
   height: 85px;
-  border: 0;
+  border: 1px solid #b0b0b0;
   border-radius: 85px;
-  background-color: #ebedff;
+  background-color: #ffffff;
   cursor: pointer;
 `;
