@@ -29,13 +29,26 @@ export default function ContentsCard() {
           <PlaceTitle>{"경기도 남양주시"}</PlaceTitle>
         </Place>
       </TagBox>
+      <DecView>
+        <Title>{"다시 찾을 명소 중 하나"}</Title>
+        <Description>
+          {
+            "Copy 처음에는 여기가 괜찮은 줄 전혀 몰랐거든요? 그런데 막상 가보니 까 재밌는 것들도 엄청 많고 산책하는 거 좋아하시면 완전 강추드 립니다😊 사실 양심 고백을 하자면 굉장히 별로였는데 돈 받아..."
+          }
+        </Description>
+      </DecView>
+      <PriceView>
+        <PriceBox>
+          <Price>{"총 비용 : 33,000원"}</Price>
+        </PriceBox>
+      </PriceView>
     </Cards>
   );
 }
 
 const Cards = styled.article`
   width: 350px;
-  height: 390px;
+  height: auto;
   margin-top: 20px;
 `;
 
@@ -74,4 +87,36 @@ const PlaceTitle = styled.text`
   font-size: 14px;
   font-weight: 500;
   color: #6d6d6d;
+`;
+
+const DecView = styled.div`
+  ${({ theme }) => theme.MIXINS.flexBox("column", "center", "start")};
+  margin-top: 5px;
+`;
+
+const Title = styled.text`
+  font-size: 20px;
+  font-weight: 700;
+`;
+
+const Description = styled.text`
+  font-size: 14px;
+  color: #8e8e8e;
+`;
+
+const PriceView = styled.section`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "end")};
+  margin-top: 10px;
+`;
+
+const PriceBox = styled.div`
+  background-color: ${({ theme }) => theme.colors.green50};
+  border-radius: 20px;
+  padding: 3px 10px;
+`;
+
+const Price = styled.text`
+  color: ${({ theme }) => theme.colors.green400};
+  font-size: 16px;
+  font-weight: 700;
 `;

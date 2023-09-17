@@ -5,12 +5,16 @@ import TopNavigation from "./components/TopNavigation";
 import "./styles/global.css";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
+import { useState } from "react";
+import MenuModal from "./components/MenuModal";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isModal, setIsModal] = useState(false);
+
   return (
     <html lang="en">
       <body className="container">
@@ -23,7 +27,7 @@ export default function RootLayout({
           }
         `}</style>
         <ThemeProvider theme={theme}>
-          <TopNavigation />
+          <TopNavigation isModal={isModal} setIsModal={setIsModal} />
           {children}
           <Footer />
         </ThemeProvider>

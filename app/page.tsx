@@ -2,9 +2,9 @@
 
 import Image from "@/node_modules/next/image";
 import styled from "styled-components";
-import ContentsCard from "./component/ContentsCard";
-import MenuIcon from "./component/MenuIcon";
-import Slick from "./component/Slick";
+import ContentsCard from "./components/ContentsCard";
+import MenuIcon from "./components/MenuIcon";
+import Slick from "./components/Slick";
 
 export default function main() {
   return (
@@ -46,6 +46,8 @@ export default function main() {
           </OtherStories>
         </TitleBox>
         <ContentsCard />
+        <ContentsCard />
+        <ContentsCard />
       </ContentsView>
     </Container>
   );
@@ -81,7 +83,7 @@ const MenuText = styled.text`
 
 const ContentsView = styled.article`
   margin-top: 34px;
-  padding: 0 36px;
+  padding: 26px 36px;
 `;
 
 const TitleBox = styled.div`

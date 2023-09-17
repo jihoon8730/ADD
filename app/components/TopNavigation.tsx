@@ -1,22 +1,29 @@
 import styled from "styled-components";
 
 import SideBarIcon from "../../public/assets/icons/menu-bar.svg";
-import AddLogo from "../../public/assets/icons/add-logo.svg";
+import AddLogo from "../../public/assets/icons/logo_pink.svg";
 
-export default function TopNavigation() {
+export default function TopNavigation({
+  isModal,
+  setIsModal,
+}: {
+  setIsModal: any;
+  isModal: any;
+}) {
   const handleMenuToggle = () => {
-    console.log("***MenuToggle");
+    setIsModal(!isModal);
+    console.log("isModal : ", isModal);
   };
 
   return (
     <Header>
-      <ViewBox>
+      <ViewBox contentPosition="">
         <SideBarIcon style={{ cursor: "pointer" }} onClick={handleMenuToggle} />
       </ViewBox>
       <ViewBox contentPosition="center">
         <AddLogo />
       </ViewBox>
-      <ViewBox />
+      <ViewBox contentPosition="" />
     </Header>
   );
 }

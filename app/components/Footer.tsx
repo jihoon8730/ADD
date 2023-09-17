@@ -35,13 +35,13 @@ const FooterView = styled.footer`
 `;
 
 const TelNumber = styled.text`
-  color: #000000;
+  color: ${({ theme }) => theme.colors.violet900};
   font-size: 25px;
   font-weight: 700;
 `;
 
 const Description = styled.text`
-  color: #000000;
+  color: ${({ theme }) => theme.colors.violet900};
   font-size: 14px;
   font-weight: 300;
 `;
@@ -53,6 +53,7 @@ const PolicyBox = styled.div`
   margin-top: 31px;
 `;
 const Buttons = styled.button`
+  color: ${({ theme }) => theme.colors.violet900};
   font-size: 12px;
   font-weight: 400;
   border: 0;
@@ -61,6 +62,7 @@ const Buttons = styled.button`
 `;
 
 const Lines = styled.text`
+  color: ${({ theme }) => theme.colors.violet900};
   margin-bottom: 4px;
   font-size: 12px;
   font-weight: 400;
