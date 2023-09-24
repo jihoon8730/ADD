@@ -13,11 +13,11 @@ export default function ContentsCard() {
         />
       </ImageBox>
       <TagBox>
-        <Tag colors="#ffa360" backColor="#fff5ee">
-          <TagDescription fontColor="#FFA360">{"#산책"}</TagDescription>
+        <Tag colors="#ffa360" groundcolor="#fff5ee">
+          <TagDescription fontcolor="#FFA360">{"#산책"}</TagDescription>
         </Tag>
-        <Tag colors="#3C67FF" backColor="#EFF2FF">
-          <TagDescription fontColor="#3C67FF">{"#명소"}</TagDescription>
+        <Tag colors="#3C67FF" groundcolor="#EFF2FF">
+          <TagDescription fontcolor="#3C67FF">{"#명소"}</TagDescription>
         </Tag>
         <Place>
           <Image
@@ -63,7 +63,7 @@ const TagBox = styled.section`
   margin-top: 8px;
 `;
 
-const Tag = styled.div<{ colors: string; backColor: string }>`
+const Tag = styled.div<{ colors: string; groundcolor: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,11 +71,11 @@ const Tag = styled.div<{ colors: string; backColor: string }>`
   height: 25px;
   border-radius: 10px;
   border: 1px solid ${(props) => props.colors || "#FFFFFF"};
-  background-color: ${(props) => props.backColor || "#ffffff"};
+  background-color: ${(props) => props.groundcolor || "#ffffff"};
 `;
 
-const TagDescription = styled.text<{ fontColor: string }>`
-  color: ${(props) => props.fontColor || "#000000"};
+const TagDescription = styled.p<{ fontcolor: string }>`
+  color: ${(props) => props.fontcolor || "#000000"};
   font-size: 13px;
 `;
 
@@ -83,7 +83,7 @@ const Place = styled.div`
   ${({ theme }) => theme.MIXINS.flexBox("row")}
 `;
 
-const PlaceTitle = styled.text`
+const PlaceTitle = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: #6d6d6d;
@@ -94,12 +94,12 @@ const DecView = styled.div`
   margin-top: 5px;
 `;
 
-const Title = styled.text`
+const Title = styled.div`
   font-size: 20px;
   font-weight: 700;
 `;
 
-const Description = styled.text`
+const Description = styled.div`
   font-size: 14px;
   color: #8e8e8e;
 `;
@@ -115,7 +115,7 @@ const PriceBox = styled.div`
   padding: 3px 10px;
 `;
 
-const Price = styled.text`
+const Price = styled.div`
   color: ${({ theme }) => theme.colors.green400};
   font-size: 16px;
   font-weight: 700;

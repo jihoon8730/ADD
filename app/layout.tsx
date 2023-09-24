@@ -6,7 +6,6 @@ import "./styles/global.css";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 import { useState } from "react";
-import MenuModal from "./components/MenuModal";
 
 export default function RootLayout({
   children,
@@ -20,8 +19,6 @@ export default function RootLayout({
       <body className="container">
         <style jsx>{`
           .container {
-            margin: 0 auto;
-            width: 24vw;
             min-width: 428px;
             background-color: #eeeeee;
           }

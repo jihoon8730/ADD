@@ -29,18 +29,20 @@ export default function Footer() {
 const FooterView = styled.footer`
   display: flex;
   flex-direction: column;
+  width: 428px;
   height: 202px;
+  margin: 0 auto;
   padding: 19px 31px 0px 31px;
   background-color: #ebecf3;
 `;
 
-const TelNumber = styled.text`
+const TelNumber = styled.div`
   color: ${({ theme }) => theme.colors.violet900};
   font-size: 25px;
   font-weight: 700;
 `;
 
-const Description = styled.text`
+const Description = styled.div`
   color: ${({ theme }) => theme.colors.violet900};
   font-size: 14px;
   font-weight: 300;
@@ -61,7 +63,7 @@ const Buttons = styled.button`
   cursor: pointer;
 `;
 
-const Lines = styled.text`
+const Lines = styled.div`
   color: ${({ theme }) => theme.colors.violet900};
   margin-bottom: 4px;
   font-size: 12px;

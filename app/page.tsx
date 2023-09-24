@@ -6,7 +6,11 @@ import ContentsCard from "./components/ContentsCard";
 import MenuIcon from "./components/MenuIcon";
 import Slick from "./components/Slick";
 
+import { useRouter } from "next/navigation";
+
 export default function main() {
+  const router = useRouter();
+
   return (
     <Container>
       <SliderView>
@@ -14,7 +18,7 @@ export default function main() {
       </SliderView>
 
       <MenuView>
-        <IconBox>
+        <IconBox onClick={() => router.push("/photo")}>
           <MenuIcon iconCode={"picture"} />
           <MenuText>{"사진"}</MenuText>
         </IconBox>
@@ -54,7 +58,9 @@ export default function main() {
 }
 
 const Container = styled.main`
-  height: auto;
+  margin: 0 auto;
+  width: 428px;
+  min-width: 428px;
   background-color: #ffffff;
 `;
 
@@ -74,7 +80,7 @@ const IconBox = styled.div`
   align-items: center;
 `;
 
-const MenuText = styled.text`
+const MenuText = styled.div`
   margin-top: 6px;
   color: #000000;
   font-size: 16px;
@@ -94,7 +100,7 @@ const TitleBox = styled.div`
   gap: 12px;
 `;
 
-const Title = styled.text`
+const Title = styled.div`
   color: #000000;
   font-size: 24px;
   font-weight: 800;
@@ -110,7 +116,7 @@ const OtherStories = styled.button`
   cursor: pointer;
 `;
 
-const Description = styled.text`
+const Description = styled.div`
   color: #656565;
   font-size: 9px;
   font-weight: 700;
