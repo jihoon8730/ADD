@@ -1,10 +1,9 @@
 import styled from "styled-components";
-
-import SideBarIcon from "../../public/assets/icons/menu-bar.svg";
 import AddLogo from "../../public/assets/icons/logo_pink.svg";
 import BackButton from "../../public/assets/icons/top-back.svg";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import MenuModal from "./MenuModal";
 
 export default function TopNavigation({
   isModal,
@@ -28,10 +27,7 @@ export default function TopNavigation({
       {pathName === "/" && (
         <>
           <ViewBox position="">
-            <SideBarIcon
-              style={{ cursor: "pointer" }}
-              onClick={handleMenuToggle}
-            />
+            <MenuModal />
           </ViewBox>
           <ViewBox position="center">
             <AddLogo />
