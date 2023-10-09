@@ -19,7 +19,9 @@ export default function RootLayout({
       <body className="container">
         <style jsx>{`
           .container {
+            width: 428px;
             min-width: 428px;
+            margin: 0 auto;
             background-color: #eeeeee;
           }
         `}</style>

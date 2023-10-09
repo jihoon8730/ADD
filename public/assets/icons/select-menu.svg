@@ -1,0 +1,11 @@
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 34">
+<rect id="Rectangle 3" x="1" y="1" width="20" height="20" rx="3" stroke="black" stroke-width="2"/>
+<circle id="Ellipse 15" cx="5.5" cy="5.5" r="1.5" fill="black"/>
+<circle id="Ellipse 16" cx="5.5" cy="10.5" r="1.5" fill="black"/>
+<circle id="Ellipse 17" cx="5.5" cy="15.5" r="1.5" fill="black"/>
+<path id="Line 3" d="M9 6H17" stroke="black" stroke-linecap="round"/>
+<path id="Line 4" d="M9 11H17" stroke="black" stroke-linecap="round"/>
+<path id="Line 5" d="M9 16H17" stroke="black" stroke-linecap="round"/>
+</g>
+</svg>

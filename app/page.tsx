@@ -58,10 +58,6 @@ export default function main() {
 }
 
 const Container = styled.main`
-  position: relative;
-  margin: 0 auto;
-  width: 428px;
-  min-width: 428px;
   background-color: #ffffff;
 `;
 
