@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "@/node_modules/next/image";
 
 export default function Slick() {
-  var settings = {
+  const settings = {
     // dots: true,
     fade: true,
     arrows: false,

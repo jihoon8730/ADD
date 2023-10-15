@@ -24,7 +24,7 @@ export default function TopNavigation({
 
   return (
     <Header>
-      {pathName === "/" && (
+      {pathName === "/" ? (
         <>
           <ViewBox position="">
             <MenuModal />
@@ -34,13 +34,10 @@ export default function TopNavigation({
           </ViewBox>
           <ViewBox position="" />
         </>
-      )}
-      {pathName === "/photo" && (
-        <>
-          <ViewBox position="" onClick={() => router.back()}>
-            <BackButton />
-          </ViewBox>
-        </>
+      ) : (
+        <ViewBox position="" onClick={() => router.back()}>
+          <BackButton />
+        </ViewBox>
       )}
     </Header>
   );
