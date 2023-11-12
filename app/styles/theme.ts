@@ -4,6 +4,7 @@ const theme: DefaultTheme = {
   colors: {
     defaultWhite: '#ffffff',
     pink100 : "#FFBAC7",
+    pink300 : "#FF5E7F",
     background900: "#000000",
     violet900: "#3B3561",
     green400: "#2FAE8A",
@@ -12,7 +13,7 @@ const theme: DefaultTheme = {
 
   MIXINS: {
   // flex
-  flexBox: (direction = 'row', justify = 'center', align = 'center', ) => `
+  flexBox: (direction = 'row', justify = 'center', align = 'center') => `
     display: flex;
     flex-direction: ${direction};
     align-items: ${align};
