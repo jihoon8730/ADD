@@ -3,6 +3,20 @@ import styled from "styled-components";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import PhotoSlick from "./component/photoSlick";
+import UserComment from "./component/UserComment";
+import MyComment from "./component/MyComment";
+
+import Button from "@mui/material/Button";
+import { lime, purple } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#DBE3FF",
+    },
+  },
+});
 
 export default function PhotoDetail() {
   const pathName = usePathname();
@@ -78,13 +92,73 @@ export default function PhotoDetail() {
           </DescriptionText>
         </DescriptionBox>
         <BottomBox>
-          <PriceView>
-            <PriceBox>
-              <Price>{"총 비용 : 33,000원"}</Price>
-            </PriceBox>
-          </PriceView>
+          <div>
+            <PriceView>
+              <PriceBox>
+                <Price>{"총 비용 : 33,000원"}</Price>
+              </PriceBox>
+            </PriceView>
+          </div>
+          <LikeCommentBox>
+            <LikeCountBox>
+              <Image
+                src={`/assets/icons/iconamoon_heart-duotone.svg`}
+                alt="like Icon"
+                width={36}
+                height={36}
+              />
+              <LikeCount>{"1.2 k"}</LikeCount>
+            </LikeCountBox>
+            <CommentCountBox>
+              <Image
+                src={`/assets/icons/message_box.svg`}
+                alt="Message Icon"
+                width={28}
+                height={25}
+              />
+              <CommentCount>{"41"}</CommentCount>
+            </CommentCountBox>
+          </LikeCommentBox>
         </BottomBox>
       </ContentsView>
+      <CommentView>
+        <CommentListBox>
+          <UserComment
+            userName={"romii**"}
+            userContents={"헐 곰인형 이제 없어요?ㅠㅠ"}
+            userLikeCount={32}
+            userCreateAt={"12:00 PM"}
+            isLike={true}
+          />
+          <UserComment
+            userName={"loiiooi**"}
+            userContents={
+              "여기 주변에 맛집 같은 거 많나요? 아니 진짜 궁금해서물어보는 거예요. "
+            }
+            userLikeCount={32}
+            userCreateAt={"12:00 PM"}
+            isLike={false}
+          />
+          <MyComment
+            myName={"글쓴이"}
+            myContents={"맛집 이런 건 제 2 롯데월드몰 외에는 없던 것 같아요"}
+            myCreateAt={"14:00 PM"}
+          />
+        </CommentListBox>
+        <CommentInputBox>
+          <TextInput placeholder={"궁금한 점이 있다면 물어보세요!"}></TextInput>
+          <ThemeProvider theme={theme}>
+            <Button variant="contained" color="primary" size="small">
+              <Image
+                src={`/assets/icons/fluent_send-regular.svg`}
+                alt="Message Icon"
+                width={27}
+                height={27}
+              />
+            </Button>
+          </ThemeProvider>
+        </CommentInputBox>
+      </CommentView>
     </Container>
   );
 }
@@ -96,27 +170,28 @@ const Container = styled.div`
 
 const ContentsView = styled.section`
   background-color: #ffffff;
-  padding: 18px 23px 0 23px;
+  padding: 18px 23px 21px 23px;
   height: auto;
+  border-bottom: 1px solid #aeaeae;
 `;
 
-const TopTitleView = styled.div``;
+const TopTitleView = styled.section``;
 
 const HotBestView = styled.div`
   ${({ theme }) => theme.MIXINS.flexBox("row")};
   gap: 8px;
 `;
 
-const AdView = styled.div`
+const AdView = styled.article`
   ${({ theme }) => theme.MIXINS.flexBox("row")};
 `;
 
-const HotBox = styled.div`
+const HotBox = styled.article`
   ${({ theme }) => theme.MIXINS.flexBox("row", "", "center")};
   gap: 8px;
 `;
 
-const BestBox = styled.div`
+const BestBox = styled.article`
   ${({ theme }) => theme.MIXINS.flexBox("row", "", "center")};
   gap: 8px;
 `;
@@ -204,7 +279,7 @@ const PlaceText = styled.div`
   font-weight: 500;
 `;
 
-const DescriptionBox = styled.div`
+const DescriptionBox = styled.article`
   margin-top: 20px;
 `;
 
@@ -215,11 +290,12 @@ const DescriptionText = styled.div`
 `;
 
 const BottomBox = styled.div`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "space-between", "center")};
   margin-top: 38px;
 `;
 
-const PriceView = styled.section`
-  ${({ theme }) => theme.MIXINS.flexBox("row", "start")};
+const PriceView = styled.article`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "", "center")};
   margin-top: 10px;
 `;
 
@@ -233,4 +309,61 @@ const Price = styled.div`
   color: ${({ theme }) => theme.colors.green400};
   font-size: 16px;
   font-weight: 700;
+`;
+
+const LikeCommentBox = styled.div`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "", "center")};
+  gap: 24px;
+`;
+
+const LikeCountBox = styled.article`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "", "center")};
+  gap: 5px;
+`;
+
+const LikeCount = styled.div`
+  font-size: 12px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.background900};
+`;
+
+const CommentCountBox = styled.article`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "", "center")};
+  gap: 5px;
+`;
+
+const CommentCount = styled.div`
+  font-size: 12px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.background900};
+`;
+
+const CommentView = styled.section`
+  height: auto;
+  padding: 0px 23px 52px 23px;
+  background-color: #ffffff;
+`;
+
+const CommentListBox = styled.article``;
+
+const CommentInputBox = styled.article`
+  ${({ theme }) => theme.MIXINS.flexBox("row", "space-between", "center")};
+  margin-top: 44px;
+  gap: 10px;
+`;
+
+const TextInput = styled.input`
+  padding: 11px 11px;
+  border-radius: 10px;
+  background: #e8e8e8;
+  border: none;
+  width: 100%;
+
+  &::placeholder {
+    color: #898989;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 `;

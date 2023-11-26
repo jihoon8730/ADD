@@ -16,8 +16,8 @@ const theme: DefaultTheme = {
   flexBox: (direction = 'row', justify = 'center', align = 'center') => `
     display: flex;
     flex-direction: ${direction};
-    align-items: ${align};
     justify-content: ${justify};
+    align-items: ${align};
   `,
   }
 }
