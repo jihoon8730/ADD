@@ -26,7 +26,7 @@ export default function main() {
           <MenuIcon iconCode={"place"} />
           <MenuText>{"지역"}</MenuText>
         </IconBox>
-        <IconBox>
+        <IconBox onClick={() => router.push("/feeling")}>
           <MenuIcon iconCode={"mdi"} />
           <MenuText>{"느낌"}</MenuText>
         </IconBox>
