@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
+import ListController from "./ListController";
+import TagItem from "./TagItem";
 
 export default function Feeling() {
   return (
@@ -14,8 +16,23 @@ export default function Feeling() {
         <MiddleFeelingTotal>
           <MiddleCount>{0}</MiddleCount>
         </MiddleFeelingTotal>
-        <div></div>
       </FeelingMiddle>
+      <TagView>
+        <TagItem title={"명소"} />
+        <TagItem title={"기념일"} />
+        <TagItem title={"낭만적인"} />
+        <TagItem title={"기억에 남을만한"} />
+        <TagItem title={"명소"} />
+        <TagItem title={"핫플"} />
+        <TagItem title={"문화"} />
+        <TagItem title={"맛집"} />
+        <TagItem title={"산책"} />
+        <TagItem title={"전망대"} />
+        <TagItem title={"포토존"} />
+      </TagView>
+      <ListView>
+        <ListController />
+      </ListView>
     </Container>
   );
 }
@@ -62,4 +79,17 @@ const MiddleCount = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+`;
+
+const TagView = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 53px;
+`;
+
+const ListView = styled.section`
+  margin-top: 48px;
 `;
