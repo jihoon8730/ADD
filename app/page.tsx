@@ -8,7 +8,7 @@ import Slick from "./components/Slick";
 
 import { useRouter } from "next/navigation";
 
-export default function main() {
+export default function Main() {
   const router = useRouter();
 
   return (

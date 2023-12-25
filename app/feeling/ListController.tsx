@@ -4,6 +4,8 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { AppBar } from "@mui/material";
+import HotListItem from "./HotListItem";
+import LatestListItem from "./LatestListItem";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -23,7 +25,7 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -66,10 +68,10 @@ export default function ListController() {
         </Tabs>
       </AppBar>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <HotListItem />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <LatestListItem />
       </CustomTabPanel>
     </Box>
   );

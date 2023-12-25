@@ -61,10 +61,22 @@ const MenuModal = () => {
             <AddLogo />
           </LogoBox>
           <SelectView>
-            <MenuModalSelect iconCode="select-menu" title="내가 쓴 글" />
-            <MenuModalSelect iconCode="write" title="이야기 작성하러 가기" />
-            <MenuModalSelect iconCode="qna" title="어디든지 문의하기" />
-            <MenuModalSelect iconCode="logout" title="로그아웃" />
+            <MenuModalSelect
+              iconCode="select-menu"
+              title="내가 쓴 글"
+              url={""}
+            />
+            <MenuModalSelect
+              iconCode="write"
+              title="이야기 작성하러 가기"
+              url={"/post"}
+            />
+            <MenuModalSelect
+              iconCode="qna"
+              title="어디든지 문의하기"
+              url={""}
+            />
+            <MenuModalSelect iconCode="logout" title="로그아웃" url={""} />
           </SelectView>
         </ModalView>
       </Modal>

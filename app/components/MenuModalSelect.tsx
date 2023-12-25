@@ -1,15 +1,25 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import styled from "styled-components";
+
+interface MenuModalSelectState {
+  iconCode: string;
+  title: string;
+  url: string;
+}
 
 export default function MenuModalSelect({
   iconCode,
   title,
-}: {
-  iconCode: string;
-  title: string;
-}) {
+  url,
+}: MenuModalSelectState) {
+  const router = useRouter();
+
+  const handlePage = () => {
+    router.push(url);
+  };
   return (
-    <SelectView>
+    <SelectView onClick={handlePage}>
       <Icons>
         <Image
           src={`/assets/icons/${iconCode}.svg`}

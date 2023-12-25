@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
 import styled from "styled-components";
 import ListController from "./ListController";
 import TagItem from "./TagItem";
